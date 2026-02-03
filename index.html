@@ -4,16 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Circle Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <main class="app">
+        <header class="app__header">
+            <p class="app__eyebrow">Geometry sandbox</p>
+            <h1>Circle Generator</h1>
+            <p class="app__subtitle">Enter a radius to visualize the circle and instantly see the math.</p>
+        </header>
 
-    <button id ="g-btn">Generate</button>
-    <p id="sad">not working correctly i'm sad :( </p>
-    <div id="circle"></div>
-    <div id="circumference-el">Circumference is: </div>
+        <form class="app__form" id="circle-form">
+            <div class="field">
+                <label for="radius">Radius (cm)</label>
+                <input id="radius" name="radius" type="number" min="0" step="0.1" placeholder="e.g. 6.5" inputmode="decimal" required>
+                <p class="field__hint">We scale 1 cm to 12 px for the preview.</p>
+                <p class="field__error" id="radius-error" role="alert"></p>
+            </div>
+            <button type="submit" id="g-btn">Generate</button>
+        </form>
 
-<script src="logic.js"></script>
+        <section class="results" aria-live="polite">
+            <div class="metrics" id="metrics">
+                <div>
+                    <p class="metrics__label">Diameter</p>
+                    <p class="metrics__value" id="diameter-el">--</p>
+                </div>
+                <div>
+                    <p class="metrics__label">Circumference</p>
+                    <p class="metrics__value" id="circumference-el">--</p>
+                </div>
+            </div>
+
+            <div class="circle-stage">
+                <div id="circle"></div>
+                <p class="circle-stage__label" id="circle-size">Diameter preview: --</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="logic.js"></script>
 </body>
 </html>
