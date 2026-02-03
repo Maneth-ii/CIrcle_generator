@@ -61,7 +61,7 @@ body {
 
 .app__form {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
     gap: 16px;
     align-items: end;
     margin-bottom: 32px;
@@ -84,7 +84,22 @@ input {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+select {
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    font-size: 1rem;
+    background: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
 input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(43, 112, 255, 0.18);
+}
+
+select:focus {
     outline: none;
     border-color: var(--accent);
     box-shadow: 0 0 0 3px rgba(43, 112, 255, 0.18);
@@ -166,6 +181,25 @@ input:focus {
 .circle-stage__label {
     margin: 0;
     color: var(--muted);
+}
+
+.insight {
+    margin-top: 32px;
+    padding: 20px 24px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: #fff9f0;
+}
+
+.insight h2 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+}
+
+.insight__text {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
 }
 
 @media (max-width: 768px) {
