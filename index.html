@@ -12,7 +12,7 @@
         <header class="app__header">
             <p class="app__eyebrow">Geometry sandbox</p>
             <h1>Circle Generator</h1>
-            <p class="app__subtitle">Enter a radius to visualize the circle and instantly see the math.</p>
+            <p class="app__subtitle">Enter a radius to visualize the circle, see the math, and translate it into a real-world use case.</p>
         </header>
 
         <form class="app__form" id="circle-form">
@@ -21,6 +21,15 @@
                 <input id="radius" name="radius" type="number" min="0" step="0.1" placeholder="e.g. 6.5" inputmode="decimal" required>
                 <p class="field__hint">We scale 1 cm to 12 px for the preview.</p>
                 <p class="field__error" id="radius-error" role="alert"></p>
+            </div>
+            <div class="field">
+                <label for="use-case">Use case</label>
+                <select id="use-case" name="use-case">
+                    <option value="garden">Garden bed edging</option>
+                    <option value="table">Round tabletop cover</option>
+                    <option value="pizza">Pizza sizing</option>
+                </select>
+                <p class="field__hint">Pick a scenario to translate the measurements.</p>
             </div>
             <button type="submit" id="g-btn">Generate</button>
         </form>
@@ -35,12 +44,21 @@
                     <p class="metrics__label">Circumference</p>
                     <p class="metrics__value" id="circumference-el">--</p>
                 </div>
+                <div>
+                    <p class="metrics__label">Area</p>
+                    <p class="metrics__value" id="area-el">--</p>
+                </div>
             </div>
 
             <div class="circle-stage">
                 <div id="circle"></div>
                 <p class="circle-stage__label" id="circle-size">Diameter preview: --</p>
             </div>
+        </section>
+
+        <section class="insight" aria-live="polite">
+            <h2>Practical transformation</h2>
+            <p class="insight__text" id="insight-text">Add a radius and choose a use case to see a real-world summary.</p>
         </section>
     </main>
 
